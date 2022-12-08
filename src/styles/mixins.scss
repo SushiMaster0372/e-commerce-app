@@ -1,0 +1,34 @@
+@mixin respond($screenType) {
+  @if $screenType == mobile {
+    @media only screen and (min-width: 0) and (max-width: 480px) {
+      @content;
+    }
+  } @else if $screenType == 600px {
+    @media only screen and (min-width: 480px) and (max-width: 600px) {
+      @content;
+    }
+  } @else if $screenType == tablet {
+    @media only screen and (min-width: 600px) and (max-width: 900px) {
+      @content;
+    }
+  } @else if $screenType == 1000px {
+    @media only screen and (min-width: 900px) and (max-width: 1000px) {
+      @content;
+    }
+  } @else if $screenType == laptop {
+    @media only screen and (min-width: 1000px) and (max-width: 1440px) {
+      @content;
+    }
+  } @else if $screenType == desktop {
+    @media only screen and (min-width: 1440px) {
+      @content;
+    }
+  }
+}
+
+@mixin margin-right($margin-right) {
+  margin-right: $margin-right;
+  &:last-child {
+    margin-right: 0;
+  }
+}

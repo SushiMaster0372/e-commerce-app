@@ -1,0 +1,164 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+#head {
+  background-color: $mate-black;
+  height: 4vh;
+  padding: 1vh 0;
+  font-size: $head-font-size;
+
+  .phone,
+  .email,
+  .location {
+    @include margin-right(50px);
+
+    i,
+    span {
+      color: lightgray;
+      @include margin-right(5px);
+    }
+  }
+
+  .social-media {
+    i {
+      color: lightgray;
+      transition: 0.5s;
+      &:hover {
+        color: $secondary;
+      }
+      cursor: pointer;
+      @include margin-right(15px);
+    }
+  }
+  @include respond(1000px) {
+    font-size: 0.8em;
+  }
+  @include respond(tablet) {
+    font-size: 0.8em;
+  }
+  @include respond(600px) {
+    display: none;
+  }
+  @include respond(mobile) {
+    display: none;
+  }
+}
+
+// box-shadow: 0px -5px 5px -7px rgba(34, 60, 80, 0.6) inset;
+
+nav {
+  margin-bottom: 30px;
+  position: relative;
+  height: 8vh;
+  box-shadow: 0px -5px 5px -7px rgba(34, 60, 80, 0.6) inset;
+  .sidebar-icon {
+    z-index: 1000;
+    position: absolute;
+    display: none;
+    top: 20px;
+    left: 10px;
+    @include respond(tablet) {
+      display: block;
+    }
+    @include respond(600px) {
+      display: block;
+    }
+    @include respond(mobile) {
+      display: block;
+    }
+  }
+
+  @include respond(600px) {
+    .container {
+      width: 80%;
+    }
+  }
+  @include respond(mobile) {
+    .container {
+      width: 80%;
+    }
+  }
+
+  .nav {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+
+    &__items {
+      transition: 0.5s;
+      font-size: 1.2em;
+      display: flex;
+      @include respond(tablet) {
+        display: none;
+      }
+      @include respond(600px) {
+        display: none;
+      }
+      @include respond(mobile) {
+        display: none;
+      }
+
+      li {
+        a {
+          color: $mate-black;
+          transition: 0.5s;
+          &:hover {
+            color: $secondary;
+          }
+        }
+        @include margin-right(60px);
+        @include respond(1000px) {
+          font-size: 0.9em;
+          @include margin-right(35px);
+        }
+      }
+    }
+
+    .sidebar {
+      position: absolute;
+      top: 0;
+      flex-direction: column;
+      background-color: aliceblue;
+      left: 0;
+      width: 30vw;
+      height: 100vh;
+      padding: 100px 20px;
+      @include respond(600px) {
+        width: 50vw;
+      }
+      @include respond(mobile) {
+        width: 50vw;
+      }
+      li {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 1.1em;
+        a {
+          color: $mate-black;
+          text-transform: uppercase;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &__icons {
+      display: flex;
+      div {
+        font-size: 1.1em;
+        @include margin-right(20px);
+        i {
+          color: $mate-black;
+          transition: 0.5s;
+          &:hover {
+            color: $secondary;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
