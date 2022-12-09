@@ -1,0 +1,14 @@
+@import "../../../styles/variables.scss";
+.btn {
+  background-color: $secondary;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  span {
+    font-size: 1em;
+    font-weight: bold;
+    color: azure;
+  }
+}
