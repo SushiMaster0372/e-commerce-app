@@ -135,13 +135,31 @@
 
     .head__nav {
       display: flex;
+
+      .active {
+        font-weight: bold;
+        opacity: 1;
+        color: $secondary;
+      }
+
       li {
         cursor: pointer;
         @include margin-right(50px);
         opacity: 0.7;
         transition: 0.5s;
+        text-transform: capitalize;
         &:hover {
           color: $secondary;
+        }
+        @include respond(tablet) {
+          font-size: 0.9em;
+          @include margin-right(35px);
+        }
+        @include respond(600px) {
+          display: none;
+        }
+        @include respond(mobile) {
+          display: none;
         }
       }
     }
@@ -180,6 +198,22 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 65px;
+
+    @include respond(1000px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @include respond(tablet) {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 85px;
+    }
+    @include respond(600px) {
+      grid-template-columns: 1fr;
+      grid-column-gap: 65px;
+    }
+    @include respond(mobile) {
+      grid-template-columns: 1fr;
+      grid-column-gap: 65px;
+    }
   }
 }
 /**********************Product-list**********************/
@@ -221,6 +255,16 @@
     img {
       width: 10vw;
       object-fit: contain;
+
+      @include respond(tablet) {
+        width: 15vw;
+      }
+      @include respond(600px) {
+        width: 20vw;
+      }
+      @include respond(mobile) {
+        width: 25vw;
+      }
     }
   }
 

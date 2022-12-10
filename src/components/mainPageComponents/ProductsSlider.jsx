@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Button from "../UI/button/Button";
+import { getSliderProducts } from "../../redux/products/sliderProductsSlice";
 
 const ProductsSlider = () => {
   const settings = {
@@ -15,10 +16,16 @@ const ProductsSlider = () => {
     autoplay: true,
   };
 
-  const products = useSelector((state) => state.products.products);
+  const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(getSliderProducts(5));
+  // }, []);
+
+  const products = useSelector((state) => state.sliderProducts.sliderProducts);
   return (
     <Slider {...settings}>
-      {products.slice(0, 5).map((productItem) => (
+      {products.map((productItem) => (
         <div key={productItem.id} className="slider__item">
           <div className="item__wrapper">
             <div className="item__text">
